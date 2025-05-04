@@ -111,7 +111,7 @@ class MaterialCalculatorPage(QWidget):
                 # Загрузка типов материалов
                 material_types = session.query(MaterialType).order_by(MaterialType.name).all()
                 for m_type in material_types:
-                    defect_percent = f"{float(m_type.defect_percentage):.2f}%" if m_type.defect_percentage else "0%"
+                    defect_percent = f"{float(m_type.defect_percentage):.4f}%" if m_type.defect_percentage else "0%"
                     self.material_type_combo.addItem(f"{m_type.name} (брак: {defect_percent})", m_type.id)
         except Exception as e:
             QMessageBox.critical(self, "Ошибка загрузки данных", f"Не удалось загрузить данные: {str(e)}")
