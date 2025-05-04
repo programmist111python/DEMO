@@ -468,6 +468,7 @@ class MainWindow(QMainWindow):
 
 def main():
     app = QApplication(sys.argv)
+    app.setFont(QFont("Segoe UI"))
     win = MainWindow()
     win.resize(1200, 750)
     win.show()
